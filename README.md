@@ -1,2 +1,1 @@
-# Team-TimeCheaters
-The team space of the Time Cheaters
+# Here is a random file as a test
