@@ -1,9 +1,9 @@
 # Team-TimeCheaters
 
-## Add your own branch
-    Tdd a new branch named FirstnameLastname
+## 1. Add your own branch
+    Add a new branch named FirstnameLastname
 
-## Clone repo
+## 2.Clone repo
     Clone the repository to your local device 
 
 ## Thats it for now
