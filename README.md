@@ -1,2 +1,5 @@
-# Here is a random file as a test
-this is a test
+# Team-TimeCheaters
+
+## Objective
+To create a VS Code extension that automates the process of keeping timesheets
+

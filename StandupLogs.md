@@ -59,3 +59,4 @@ Basic MVP:
 
 - Timer with Start, Stop. Pause, and Edit functionality
 - Time data gets exported in a transferable format (such as CSV for Excel files)
+
