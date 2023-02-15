@@ -48,6 +48,15 @@ Decided the basic structure of the MVP and created project roles
 
 ## Notes:
 
-Roles: - Backend Dev (coding the functionality of the project) - Documentation of the extension and how to use it - GUI (Front end application) - Research (Compare similar apps and their functionalities)
+Roles:
 
-Basic MVP: - Timer with Start, Stop. Pause, and Edit functionality - Time data gets exported in a transferable format (such as CSV for Excel files)
+- Backend Dev (coding the functionality of the project)
+- Documentation of the extension and how to use it
+- GUI (Front end application)
+- Research (Compare similar apps and their functionalities)
+
+Basic MVP:
+
+- Timer with Start, Stop. Pause, and Edit functionality
+- Time data gets exported in a transferable format (such as CSV for Excel files)
+
