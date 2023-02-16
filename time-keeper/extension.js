@@ -51,7 +51,7 @@ function activate(context) {
 		  minutes++;
 		  vscode.window.setStatusBarMessage("0"+hours +":0"+minutes+":" + seconds);
 		  seconds = 0;
-		  vscode.window.setStatusBarMessage("0"+hours +":0"+minutes+":" + seconds);
+		  vscode.window.setStatusBarMessage("0"+hours +":0"+minutes+":0" + seconds);
 		}
 		if (minutes > 9){
 			vscode.window.setStatusBarMessage("0"+hours +":"+minutes+":" + seconds);
