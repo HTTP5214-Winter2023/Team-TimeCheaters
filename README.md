@@ -1,15 +1,21 @@
 # Team-TimeCheaters
 
-## 1. Add your own branch
+## Objective
 
-    Add a new branch named FirstnameLastname
+To create a VS Code extension that automates the process of keeping timesheets
 
-## 2.Clone repo
+## to open from install
 
-    Clone the repository to your local device
+1. Clone the repository(Ensure node is installed)
 
-## Thats it for now
+2. Open the extension.js file
 
-## Anthony Ho
+3. To run the file click F5 or run and debug
 
-    Checking in on his own branch.
+4. Select Run in Extension Development Host
+
+5. CTRL P to open command line
+
+6. '>' Start: To start the timer
+
+7. '>' Stop: To Stop/Pause the timer
