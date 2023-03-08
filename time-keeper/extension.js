@@ -41,7 +41,6 @@ function activate(context) {
   let saveReset = vscode.commands.registerCommand(
     "time-keeper.saveReset",
     function () {
-      vscode.window.showInformationMessage("Time stopped, save & reset");
       //stops the timer
       clearInterval(Interval);
 
@@ -79,6 +78,10 @@ function activate(context) {
       //print in console a readable time
       let savedTime = `${savedTimeHr}:${savedTimeMin}:${savedTimeSec}`;
       console.log(`Saved time is: ${savedTime} (HH:MM:SS)`);
+      //Notification that time was saved
+      vscode.window.showInformationMessage(
+        `Timer stopped at ${savedTime}. Timer saved and resetted to 00:00:00.`
+      );
 
       //Clear timer once saved
       hours = 0;
