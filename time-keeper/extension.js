@@ -87,9 +87,7 @@ function activate(context) {
       hours = 0;
       minutes = 0;
       seconds = 0;
-      vscode.window.setStatusBarMessage(
-        "0" + hours + ":0" + minutes + ":0" + seconds
-      );
+      vscode.window.setStatusBarMessage(`0${hours}:0${minutes}:0${seconds}`);
     }
   );
 
