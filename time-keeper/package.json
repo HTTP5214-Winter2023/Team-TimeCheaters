@@ -9,18 +9,20 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onView: TimeCheaters"
+  ],
   "main": "./extension.js",
   "contributes": {
     "views": {
       "explorer": [
-        { 
+    { 
       "id": "TimeCheaters",
       "name": "TimeCheaters",
       "icon": "media/dep.svg",
       "contextualTitle": "TimeCheaters"
     }
-  ],
+  ]},
 
     "commands": [
       {
