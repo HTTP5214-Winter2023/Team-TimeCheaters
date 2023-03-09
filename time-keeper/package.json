@@ -12,6 +12,16 @@
   "activationEvents": [],
   "main": "./extension.js",
   "contributes": {
+    "views": {
+      "explorer": [
+        {
+      "id": "TimeCheaters",
+      "name": "TimeCheaters",
+      "icon": "media/dep.svg",
+      "contextualTitle": "TimeCheaters"
+    }
+  ],
+
     "commands": [
       {
         "command": "time-keeper.start",
