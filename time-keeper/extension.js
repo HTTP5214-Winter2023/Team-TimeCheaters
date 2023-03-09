@@ -83,13 +83,44 @@ function activate(context) {
         `Timer stopped at ${savedTime}. Timer saved and resetted to 00:00:00.`
       );
 
+
+
+
+   
+    
+
+    // converting the currentTime object into CSV format 
+    // const rows = currentTime.map(currentTime => [currentTime.hours, currentTime.minutes, currentTime.seconds]);
+    // const csv = rows.map(row => row.join(',')).join('\n');
+    const preCsvData = [
+      ["Hours", "Minutes", "Seconds"],
+      [currentTime.hours, currentTime.minutes, currentTime.seconds]
+    ];
+
+    let csvContent = "data:text/csv;charset=utf-8,";
+
+    preCsvData.forEach(function(rowArray) {
+    let row = rowArray.join(",");
+    csvContent += row + "\r\n";
+    });
+
+    console.log("this is the CSV: " + csvContent);
+
+
       //Clear timer once saved
       hours = 0;
       minutes = 0;
       seconds = 0;
       vscode.window.setStatusBarMessage(`0${hours}:0${minutes}:0${seconds}`);
     }
+
+    
+
+
   );
+
+
+
 
   function startTimer() {
     //Timing definition for seconds
