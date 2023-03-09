@@ -9,20 +9,23 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [
-    "onCommand:time-keeper.start",
-    "onCommand:time-keeper.stop"
-  ],
+  "activationEvents": [],
   "main": "./extension.js",
   "contributes": {
-    "commands": [{
-      "command": "time-keeper.start",
-      "title": "Start"
-    },
-  {
-    "command": "time-keeper.stop",
-    "title": "Stop"
-  }]
+    "commands": [
+      {
+        "command": "time-keeper.start",
+        "title": "Start"
+      },
+      {
+        "command": "time-keeper.stop",
+        "title": "Stop"
+      },
+      {
+        "command": "time-keeper.saveReset",
+        "title": "Stop & Save"
+      }
+    ]
   },
   "scripts": {
     "lint": "eslint .",
