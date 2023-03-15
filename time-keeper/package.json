@@ -9,31 +9,41 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+
+  "keywords": [
+    "timer",
+    "stopwatch",
+    "timecheaters",
+    "time",
+    "track time"
+  ],
+  "activationEvents": [
+    "onView: TimeCheaters"
+  ],
   "main": "./extension.js",
   "contributes": {
     "views": {
       "explorer": [
-        { 
+    { 
       "id": "TimeCheaters",
-      "name": "TimeCheaters",
+      "name": "TimeCheaters Timer",
       "icon": "media/dep.svg",
       "contextualTitle": "TimeCheaters"
     }
-  ],
+  ]},
 
     "commands": [
       {
         "command": "time-keeper.start",
-        "title": "Start"
+        "title": "Start Timer"
       },
       {
         "command": "time-keeper.stop",
-        "title": "Stop"
+        "title": "Pause Timer"
       },
       {
         "command": "time-keeper.saveReset",
-        "title": "Stop & Save"
+        "title": "Reset"
       }
     ]
   },

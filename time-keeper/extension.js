@@ -150,3 +150,22 @@ module.exports = {
 
 
 //This is a test message from Ellis 
+
+
+// Code by Bea
+// let show = vscode.commands.registerCommand("time-keeper.show", function () {
+//   let currentTime = {
+//     hours: hours,
+//     minutes: minutes,
+//     seconds: seconds,
+//   };
+//   let displayTime = `${currentTime.hours}:${currentTime.minutes}:${currentTime.seconds}`;
+//   vscode.window.showInformationMessage(`Timer: ${displayTime}`);
+// });
+// context.subscriptions.push(show);
+
+ // packageJSON added by Bea
+      // {
+      //   "command": "time-keeper.show",
+      //   "title": "Show Timer"
+      // }
