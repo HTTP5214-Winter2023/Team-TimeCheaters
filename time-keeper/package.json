@@ -9,6 +9,7 @@
   "categories": [
     "Other"
   ],
+<<<<<<< HEAD
 
   "keywords": [
     "timer",
@@ -17,6 +18,8 @@
     "timesheet",
     "track time"
   ],
+=======
+>>>>>>> 80913c27c9fd864c1fe7b8025727dbbd71cddcc7
   "activationEvents": [
     "onView: TimeCheaters"
   ],
