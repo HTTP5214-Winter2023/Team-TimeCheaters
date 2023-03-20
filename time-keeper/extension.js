@@ -80,7 +80,7 @@ function activate(context) {
       console.log(`Saved time is: ${savedTime} (HH:MM:SS)`);
       //Notification that time was saved
       vscode.window.showInformationMessage(
-        `Timer stopped at ${savedTime}. Timer saved and resetted to 00:00:00.`
+        `Timer stopped at ${savedTime}. Timer saved and reset to 00:00:00.`
       );
 
       //Clear timer once saved
