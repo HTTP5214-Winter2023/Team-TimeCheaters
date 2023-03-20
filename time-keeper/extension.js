@@ -200,7 +200,7 @@ function activate(context) {
 
       </head>
       <body>
-        <h1>TimeCheater Timer</h1>
+        <h1>TimeCheaters Timer</h1>
         <h4>Record Time</h4>
         <div id="timer">
           00:00:00
