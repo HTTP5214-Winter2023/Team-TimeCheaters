@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Timer</title>
+</head>
+<body>
+	<h1 id="timer">00:00:00</h1>
+	<button onclick="start()">Start</button>
+	<button onclick="stop()">Stop</button>
+	<button onclick="reset()">Reset</button>
+
+	<script>
+		var seconds = 0, minutes = 0, hours = 0;
+		var t;
+
+		function add() {
+			seconds++;
+			if (seconds >= 60) {
+				seconds = 0;
+				minutes++;
+				if (minutes >= 60) {
+					minutes = 0;
+					hours++;
+				}
+			}
+			
+			document.getElementById('timer').innerHTML = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+			
+			timer();
+		}
+
+		function timer() {
+			t = setTimeout(add, 1000);
+		}
+
+		timer();
+
+		function start() {
+			timer();
+		}
+
+		function stop() {
+			clearTimeout(t);
+		}
+
+		function reset() {
+			document.getElementById('timer').innerHTML = "00:00:00";
+			seconds = 0; minutes = 0; hours = 0;
+		}
+	</script>
+</body>
+</html>
