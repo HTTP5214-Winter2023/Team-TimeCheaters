@@ -196,6 +196,9 @@ function activate(context) {
           #stop{
             background-color: #e12729;
           }
+          #reset{
+            background-color: #6246ea;
+          }
         </style>
 
       </head>
@@ -207,11 +210,13 @@ function activate(context) {
         </div>
         <button id="start">Start</button>
         <button id="stop">Stop</button>
+        <button id="reset">Reset</button>
         <script>
 
           const timer = document.getElementById("timer");
           const startBtn = document.getElementById("start");
           const stopBtn = document.getElementById("stop");
+          const resetBtn = document.getElementById("reset");
           let timerInterval = null;
           let seconds = 0;
           let minutes = 0;
@@ -242,6 +247,14 @@ function activate(context) {
 
           startBtn.addEventListener("click", startTimer);
           stopBtn.addEventListener("click", stopTimer);
+
+          resetBtn.addEventListener("click", function() {
+            clearInterval(timerInterval);
+            seconds = 0;
+            minutes = 0;
+            hours = 0;
+            timer.textContent = "00:00:00";
+          });
 
         </script>
       </body>
