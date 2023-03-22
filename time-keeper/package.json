@@ -42,7 +42,7 @@
       },
       {
         "command": "time-keeper.saveReset",
-        "title": "Reset"
+        "title": "Stop & Save"
       }
     ]
   },
