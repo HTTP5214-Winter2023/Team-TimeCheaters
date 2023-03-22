@@ -32,7 +32,7 @@ function activate(context) {
   // Pause
   let stop = vscode.commands.registerCommand("time-keeper.stop", function () {
     // comment to show timer has stopped
-    vscode.window.showInformationMessage("Time stopped");
+    vscode.window.showInformationMessage("Time paused");
     //Clear the interval to stop/pause the timer
     clearInterval(Interval);
   });
