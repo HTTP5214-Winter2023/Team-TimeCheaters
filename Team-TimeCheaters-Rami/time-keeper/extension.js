@@ -108,14 +108,12 @@ function activate(context) {
 		
 			// Add the new command to the subscriptions array
 			context.subscriptions.push(copyTime);
-		}
-		
-		// ... (keep the existing code)
+	
+	// Push the commands to the page
+  context.subscriptions.push(start, stop, saveReset, copyTime);
 
-	  //Push the commands to the page
-	context.subscriptions.push(start, start);
 }
-
+		
 // This method is called when your extension is deactivated
 function deactivate() {}
 
