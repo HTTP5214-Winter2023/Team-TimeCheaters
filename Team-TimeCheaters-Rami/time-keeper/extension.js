@@ -86,13 +86,13 @@ function activate(context) {
 		
 			// Modify the existing saveReset function to use the new formatTime function
 			let saveReset = vscode.commands.registerCommand("time-keeper.saveReset", function () {
-				// ... (keep the existing code)
-		
-				// Modify the following lines to use the new formatTime function
-				let savedTime = formatTime(currentTime.hours, currentTime.minutes, currentTime.seconds);
-				console.log(`Saved time is: ${savedTime} (HH:MM:SS)`);
-		
-				// ... (keep the existing code)
+			  // ... (keep the existing code)
+
+			  // Modify the following lines to use the new formatTime function
+			  let savedTime = formatTime(hours, minutes, seconds);
+			  console.log(`Saved time is: ${savedTime} (HH:MM:SS)`);
+
+ 			 // ... (keep the existing code)
 			});
 		
 			// Add a new helper function to format the time (HH:MM:SS)
