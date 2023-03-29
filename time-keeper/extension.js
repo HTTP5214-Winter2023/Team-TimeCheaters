@@ -1,5 +1,6 @@
 
-import {Blob} from 'buffer';
+// import {Blob} from 'buffer';
+const fs = require('fs');
 
 
 
@@ -96,12 +97,12 @@ function activate(context) {
       vscode.window.showInformationMessage(
         `Timer stopped at ${savedTime}. Timer saved and resetted to 00:00:00.`);
 
+
     // converting the currentTime object into CSV format 
     const preCsvData = [
       ["Hours", "Minutes", "Seconds"],
       [savedTimeHr, savedTimeMin, savedTimeSec]
     ];
-
 
     preCsvData.forEach(function(rowArray) {
     let row = rowArray.join(",");
@@ -114,22 +115,29 @@ function activate(context) {
     vscode.window.showInformationMessage(
       "this is the saved time in CSV: " + csvContent);
 
+    const filePath = '/Users/ellischang/Documents/csv/test.csv'; // Replace with your desired file path
 
-
-      function downloadCSV(csv, filename) {
-        
-        
-        const csvFile = new Blob([csv], { type: "text/csv" });
-        const downloadLink = document.createElement("a");
-        downloadLink.download = filename;
-        downloadLink.href = window.URL.createObjectURL(csvFile);
-        downloadLink.style.display = "none";
-        document.body.appendChild(downloadLink);
-        downloadLink.click();
+    fs.writeFile(filePath, csvContent, (err) => {
+      if (err) {
+        console.error(err);
+        return;
       }
+      console.log('File saved successfully.');
+    });
+
+// from before ******************
+      // function downloadCSV(csv, filename) {
+      //   const csvFile = new Blob([csv], { type: "text/csv" });
+      //   const downloadLink = document.createElement("a");
+      //   downloadLink.download = filename;
+      //   downloadLink.href = window.URL.createObjectURL(csvFile);
+      //   downloadLink.style.display = "none";
+      //   document.body.appendChild(downloadLink);
+      //   downloadLink.click();
+      // }
       
       // call this function to initiate the download
-      downloadCSV(csvContent, "example.csv");
+      // downloadCSV(csvContent, "example.csv");             undo this comment 
 
 
       //Clear timer once saved
@@ -138,13 +146,7 @@ function activate(context) {
       seconds = 0;
       vscode.window.setStatusBarMessage(`0${hours}:0${minutes}:0${seconds}`);
     }
-
-    
-
-
   );
-
-
 
 
   function startTimer() {
