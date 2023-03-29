@@ -1,3 +1,9 @@
+
+import {Blob} from 'buffer';
+
+
+
+
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 const vscode = require("vscode");
@@ -37,6 +43,13 @@ function activate(context) {
     clearInterval(Interval);
   });
 
+
+
+
+  // SAVING THE STOPPED AND SAVED TIME INTO A VARIABLE WITH CSV DATA TYPE
+  let csvContent = "";
+
+
   //Function to Stop, Save, and Reset the timer
   let saveReset = vscode.commands.registerCommand(
     "time-keeper.saveReset",
@@ -48,8 +61,9 @@ function activate(context) {
       let currentTime = {
         hours: hours,
         minutes: minutes,
-        seconds: seconds,
+        seconds: seconds
       };
+
       console.log(currentTime);
 
       //Export saved timer
@@ -80,31 +94,42 @@ function activate(context) {
       console.log(`Saved time is: ${savedTime} (HH:MM:SS)`);
       //Notification that time was saved
       vscode.window.showInformationMessage(
-        `Timer stopped at ${savedTime}. Timer saved and resetted to 00:00:00.`
-      );
-
-
-
-
-   
-    
+        `Timer stopped at ${savedTime}. Timer saved and resetted to 00:00:00.`);
 
     // converting the currentTime object into CSV format 
-    // const rows = currentTime.map(currentTime => [currentTime.hours, currentTime.minutes, currentTime.seconds]);
-    // const csv = rows.map(row => row.join(',')).join('\n');
     const preCsvData = [
       ["Hours", "Minutes", "Seconds"],
-      [currentTime.hours, currentTime.minutes, currentTime.seconds]
+      [savedTimeHr, savedTimeMin, savedTimeSec]
     ];
 
-    let csvContent = "data:text/csv;charset=utf-8,";
 
     preCsvData.forEach(function(rowArray) {
     let row = rowArray.join(",");
     csvContent += row + "\r\n";
     });
 
-    console.log("this is the CSV: " + csvContent);
+    console.log("this is the saved time in CSV: " + csvContent);
+
+    //notification of time in csv
+    vscode.window.showInformationMessage(
+      "this is the saved time in CSV: " + csvContent);
+
+
+
+      function downloadCSV(csv, filename) {
+        
+        
+        const csvFile = new Blob([csv], { type: "text/csv" });
+        const downloadLink = document.createElement("a");
+        downloadLink.download = filename;
+        downloadLink.href = window.URL.createObjectURL(csvFile);
+        downloadLink.style.display = "none";
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+      }
+      
+      // call this function to initiate the download
+      downloadCSV(csvContent, "example.csv");
 
 
       //Clear timer once saved
