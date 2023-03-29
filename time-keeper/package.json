@@ -9,6 +9,13 @@
   "categories": [
     "Other"
   ],
+  "keywords": [
+    "timer",
+    "stopwatch",
+    "timecheaters",
+    "timesheet",
+    "track time"
+  ],
   "activationEvents": [
     "onView: TimeCheaters"
   ],
@@ -16,22 +23,22 @@
   "contributes": {
     "views": {
       "explorer": [
-    { 
-      "id": "TimeCheaters",
-      "name": "TimeCheaters",
-      "icon": "media/dep.svg",
-      "contextualTitle": "TimeCheaters"
-    }
-  ]},
-
+        { 
+          "id": "TimeCheaters",
+          "name": "TimeCheaters Timer",
+          "icon": "media/dep.svg",
+          "contextualTitle": "TimeCheaters"
+        }
+      ]
+    },
     "commands": [
       {
         "command": "time-keeper.start",
-        "title": "Start"
+        "title": "Start Timer"
       },
       {
         "command": "time-keeper.stop",
-        "title": "Stop"
+        "title": "Pause Timer"
       },
       {
         "command": "time-keeper.saveReset",
@@ -39,6 +46,13 @@
       }
     ]
   },
+  "keybindings": [
+    {
+      "command": "time-keeper.showTimer",
+      "key": "ctrl+shift+t",
+      "when": "editorTextFocus"
+    }
+  ],
   "scripts": {
     "lint": "eslint .",
     "pretest": "npm run lint",

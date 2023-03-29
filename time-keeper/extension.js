@@ -13,9 +13,117 @@ function activate(context) {
   let minutes = 0;
   let hours = 0;
   let Interval = null;
+  
   // Use the console to output diagnostic information (console.log) and errors (console.error)
   // This line of code will only be executed once when your extension is activated
   console.log('"time-keeper" is now active!');
+
+  // Bea's part pasted
+  // create a new webview panel 
+  const panel = vscode.window.createWebviewPanel(
+    "timer",
+    "Timer",
+    vscode.ViewColumn.Two,
+    {
+      enableScripts: true,
+    }
+  );
+  // set up the initial HTML content for the webview panel
+  panel.webview.html = getWebviewContent();
+
+  
+  function getWebviewContent() {
+    // HTML with in-line CSS styles and in-line JavaScript because when I make separate files, it wasn't linking. And I'm scared.
+    return `<!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TimeCheaters Timer</title>
+        
+        <style>
+          body {
+            font-size: 24px;
+            text-align: center;
+          }
+          button {
+            font-size: 18px;
+            padding: 10px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+          }
+          #start{
+            background-color: #274001;
+            color: white;
+          }
+          #stop{
+            background-color: #e12729;
+          }
+          #save{
+            background-color: #6246ea;
+          }
+        </style>
+
+      </head>
+      <body>
+        <h1>TimeCheaters Timer</h1>
+        <h4>Record Time</h4>
+        <div id="timer">
+          00:00:00
+        </div>
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+        <button id="save">Save</button>
+        <script>
+
+          const timer = document.getElementById("timer");
+          const startBtn = document.getElementById("start");
+          const stopBtn = document.getElementById("stop");
+          const saveBtn = document.getElementById("save");
+          let timerInterval = null;
+          let seconds = 0;
+          let minutes = 0;
+          let hours = 0;
+
+          function startTimer() {
+            timerInterval = setInterval(() => {
+              seconds++;
+              if (seconds >= 60) {
+                seconds = 0;
+                minutes++;
+              }
+              if (minutes >= 60) {
+                minutes = 0;
+                hours++;
+              }
+
+              const hoursString = hours.toString().padStart(2, "0");
+              const minutesString = minutes.toString().padStart(2, "0");
+              const secondsString = seconds.toString().padStart(2, "0");
+              timer.textContent = \`\${hoursString}:\${minutesString}:\${secondsString}\`;
+            }, 1000);
+          }
+
+          function stopTimer() {
+            clearInterval(timerInterval);
+          }
+
+          startBtn.addEventListener("click", startTimer);
+          stopBtn.addEventListener("click", stopTimer);
+
+          resetBtn.addEventListener("click", function() {
+            clearInterval(timerInterval);
+            seconds = 0;
+            minutes = 0;
+            hours = 0;
+            timer.textContent = "00:00:00";
+          });
+
+        </script>
+      </body>
+      </html>`;
+  } //end Bea's code
 
   // The command has been defined in the package.json file
   // Now provide the implementation of the command with  registerCommand
@@ -147,3 +255,127 @@ module.exports = {
   activate,
   deactivate,
 };
+
+
+
+// =============== End ============== //
+
+
+// // New code of bea (Lowkey works but whatever)
+// function activate(context) {
+//   let seconds = 0;
+//   let minutes = 0;
+//   let hours = 0;
+//   let Interval = null;
+  
+//   // create a new webview panel 
+//   const panel = vscode.window.createWebviewPanel(
+//     "timer",
+//     "Timer",
+//     vscode.ViewColumn.Two,
+//     {
+//       enableScripts: true,
+//     }
+//   );
+//   // set up the initial HTML content for the webview panel
+//   panel.webview.html = getWebviewContent();
+
+  
+//   function getWebviewContent() {
+//     // HTML with in-line CSS styles and in-line JavaScript because when I make separate files, it wasn't linking. And I'm scared.
+//     return `<!DOCTYPE html>
+//       <html lang="en">
+//       <head>
+//         <meta charset="UTF-8">
+//         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//         <title>TimeCheaters Timer</title>
+        
+//         <style>
+//           body {
+//             font-size: 24px;
+//             text-align: center;
+//           }
+//           button {
+//             font-size: 18px;
+//             padding: 10px;
+//             margin: 10px;
+//             border: none;
+//             border-radius: 5px;
+//           }
+//           #start{
+//             background-color: #274001;
+//             color: white;
+//           }
+//           #stop{
+//             background-color: #e12729;
+//           }
+//           #save{
+//             background-color: #6246ea;
+//           }
+//         </style>
+
+//       </head>
+//       <body>
+//         <h1>TimeCheaters Timer</h1>
+//         <h4>Record Time</h4>
+//         <div id="timer">
+//           00:00:00
+//         </div>
+//         <button id="start">Start</button>
+//         <button id="stop">Stop</button>
+//         <button id="save">Save</button>
+//         <script>
+
+//           const timer = document.getElementById("timer");
+//           const startBtn = document.getElementById("start");
+//           const stopBtn = document.getElementById("stop");
+//           const saveBtn = document.getElementById("save");
+//           let timerInterval = null;
+//           let seconds = 0;
+//           let minutes = 0;
+//           let hours = 0;
+
+//           function startTimer() {
+//             timerInterval = setInterval(() => {
+//               seconds++;
+//               if (seconds >= 60) {
+//                 seconds = 0;
+//                 minutes++;
+//               }
+//               if (minutes >= 60) {
+//                 minutes = 0;
+//                 hours++;
+//               }
+
+//               const hoursString = hours.toString().padStart(2, "0");
+//               const minutesString = minutes.toString().padStart(2, "0");
+//               const secondsString = seconds.toString().padStart(2, "0");
+//               timer.textContent = \`\${hoursString}:\${minutesString}:\${secondsString}\`;
+//             }, 1000);
+//           }
+
+//           function stopTimer() {
+//             clearInterval(timerInterval);
+//           }
+
+//           startBtn.addEventListener("click", startTimer);
+//           stopBtn.addEventListener("click", stopTimer);
+
+//           resetBtn.addEventListener("click", function() {
+//             clearInterval(timerInterval);
+//             seconds = 0;
+//             minutes = 0;
+//             hours = 0;
+//             timer.textContent = "00:00:00";
+//           });
+
+//         </script>
+//       </body>
+//       </html>`;
+//   }
+// }
+
+
+//Resource for WebView: 
+  // https://code.visualstudio.com/api/extension-guides/webview
+  // https://github.com/anteger/vscode-touchgrass

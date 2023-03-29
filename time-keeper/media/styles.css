@@ -1,0 +1,44 @@
+html {
+	box-sizing: border-box;
+	font-size: 13px;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+.stopwatch {
+    text-align: center;
+  }
+  
+  .display {
+    font-size: 3em;
+    font-family: monospace;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    font-size: 1.5em;
+    padding: 10px 20px;
+    margin: 0 10px;
+  }
+  
+  .start {
+    background-color: #5cb85c;
+    color: #fff;
+    border: none;
+  }
+  
+  .stop {
+    background-color:#f0ad4e;
+    color: #fff;
+    border: none;
+  }
+  
+  .reset {
+    background-color:  #d9534f;
+    color: #fff;
+    border: none;
+  }
