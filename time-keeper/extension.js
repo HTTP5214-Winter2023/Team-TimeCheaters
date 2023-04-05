@@ -39,7 +39,7 @@ function activate(context) {
   // Pause
   let stop = vscode.commands.registerCommand("time-keeper.stop", function () {
     // comment to show timer has stopped
-    vscode.window.showInformationMessage("Time stopped");
+    vscode.window.showInformationMessage("Time paused");
     //Clear the interval to stop/pause the timer
     clearInterval(Interval);
   });
@@ -96,7 +96,6 @@ function activate(context) {
       //Notification that time was saved
       vscode.window.showInformationMessage(
         `Timer stopped at ${savedTime}. Timer saved and resetted to 00:00:00.`);
-
 
     // converting the currentTime object into CSV format 
     const preCsvData = [
@@ -205,6 +204,3 @@ module.exports = {
   activate,
   deactivate,
 };
-
-
-//This is a test message from Ellis 
