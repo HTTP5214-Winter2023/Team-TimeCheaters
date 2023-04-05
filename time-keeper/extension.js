@@ -1,3 +1,10 @@
+
+// import {Blob} from 'buffer';
+const fs = require('fs');
+
+
+
+
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 const vscode = require("vscode");
@@ -37,6 +44,13 @@ function activate(context) {
     clearInterval(Interval);
   });
 
+
+
+
+  // SAVING THE STOPPED AND SAVED TIME INTO A VARIABLE WITH CSV DATA TYPE
+  let csvContent = "";
+
+
   //Function to Stop, Save, and Reset the timer
   let saveReset = vscode.commands.registerCommand(
     "time-keeper.saveReset",
@@ -48,8 +62,9 @@ function activate(context) {
       let currentTime = {
         hours: hours,
         minutes: minutes,
-        seconds: seconds,
+        seconds: seconds
       };
+
       console.log(currentTime);
 
       //Export saved timer
@@ -80,8 +95,49 @@ function activate(context) {
       console.log(`Saved time is: ${savedTime} (HH:MM:SS)`);
       //Notification that time was saved
       vscode.window.showInformationMessage(
-        `Timer stopped at ${savedTime}. Timer saved and reset to 00:00:00.`
-      );
+        `Timer stopped at ${savedTime}. Timer saved and resetted to 00:00:00.`);
+
+    // converting the currentTime object into CSV format 
+    const preCsvData = [
+      ["Hours", "Minutes", "Seconds"],
+      [savedTimeHr, savedTimeMin, savedTimeSec]
+    ];
+
+    preCsvData.forEach(function(rowArray) {
+    let row = rowArray.join(",");
+    csvContent += row + "\r\n";
+    });
+
+    console.log("this is the saved time in CSV: " + csvContent);
+
+    //notification of time in csv
+    vscode.window.showInformationMessage(
+      "this is the saved time in CSV: " + csvContent);
+
+    const filePath = '/Users/ellischang/Documents/csv/test.csv'; // Replace with your desired file path
+
+    fs.writeFile(filePath, csvContent, (err) => {
+      if (err) {
+        console.error(err);
+        return;
+      }
+      console.log('File saved successfully.');
+    });
+
+// from before ******************
+      // function downloadCSV(csv, filename) {
+      //   const csvFile = new Blob([csv], { type: "text/csv" });
+      //   const downloadLink = document.createElement("a");
+      //   downloadLink.download = filename;
+      //   downloadLink.href = window.URL.createObjectURL(csvFile);
+      //   downloadLink.style.display = "none";
+      //   document.body.appendChild(downloadLink);
+      //   downloadLink.click();
+      // }
+      
+      // call this function to initiate the download
+      // downloadCSV(csvContent, "example.csv");             undo this comment 
+
 
       //Clear timer once saved
       hours = 0;
@@ -90,6 +146,7 @@ function activate(context) {
       vscode.window.setStatusBarMessage(`0${hours}:0${minutes}:0${seconds}`);
     }
   );
+
 
   function startTimer() {
     //Timing definition for seconds
