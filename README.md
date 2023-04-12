@@ -21,3 +21,7 @@ To create a VS Code extension that automates the process of keeping timesheets
 7. '>' Stop: To Stop/Pause the timer
 
 8. '>' Stop & Save: to stop the timer, save the current time, and reset the timer
+
+
+##### Notes:
+Bea's code are in extension.js and in the media folder. So far it hasn't been pushed to main
