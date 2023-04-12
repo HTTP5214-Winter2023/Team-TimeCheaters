@@ -15,11 +15,11 @@
     "commands": [
       {
         "command": "time-keeper.start",
-        "title": "Start"
+        "title": "Start Timer"
       },
       {
         "command": "time-keeper.stop",
-        "title": "Pause"
+        "title": "Pause Timer"
       },
       {
         "command": "time-keeper.saveReset",
