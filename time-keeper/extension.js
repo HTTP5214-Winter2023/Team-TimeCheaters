@@ -120,6 +120,7 @@ function activate(context) {
       "this is the saved time in CSV: " + csvContent);
 
     const filePath = '/Users/ellischang/Documents/csv/test.csv'; // Replace with your desired file path
+    //this needs to be the users name, and they NEED to have documents/csv in their local computer
 
     fs.writeFile(filePath, csvContent, (err) => {
       if (err) {
