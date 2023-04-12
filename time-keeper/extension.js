@@ -1,8 +1,6 @@
 // import {Blob} from 'buffer';
 const fs = require('fs');
 
-
-
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 const vscode = require("vscode");
@@ -19,6 +17,8 @@ function activate(context) {
   let minutes = 0;
   let hours = 0;
   let Interval = null;
+  let notificationInterval = 30; // 30-minute interval for notifications
+  let elapsedTime = 0;
   // Use the console to output diagnostic information (console.log) and errors (console.error)
   // This line of code will only be executed once when your extension is activated
   console.log('"time-keeper" is now active!');
@@ -130,7 +130,7 @@ function activate(context) {
       console.log('File saved successfully.');
     });
 
-// from before ******************
+      // from before ******************
       // function downloadCSV(csv, filename) {
       //   const csvFile = new Blob([csv], { type: "text/csv" });
       //   const downloadLink = document.createElement("a");
@@ -157,6 +157,15 @@ function activate(context) {
   function startTimer() {
     //Timing definition for seconds
     seconds++;
+    elapsedTime++;
+
+    if (elapsedTime === notificationInterval * 60) {
+      //This displays a notification to the user, stating that they have been working for the specified notificationInterval number of minutes.
+      vscode.window.showInformationMessage('You have been working for ' + notificationInterval + ' minutes.');
+      //resets the elapsedTime variable back to 0, so the process can repeat 
+      elapsedTime = 0;
+    }
+
     if (seconds <= 9) {
       vscode.window.setStatusBarMessage(
         "0" + hours + ":0" + minutes + ":0" + seconds
