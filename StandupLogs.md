@@ -188,3 +188,23 @@ This workshops is demotivating. I reached out to professors for help. I do not k
 - Ellis was able to finalize his CSV Functionality and pushed his code to main.
 
 Blockers: Still the GUI is a big blocker
+
+
+# April 12, 2023
+
+## Work
+
+#### This week, I:
+
+- considered of coding something else like "did you mean to save this?"
+- I replaced (stop --> pause) to avoid confusion to people using the timer. I pushed it to main.
+
+## Meetings
+
+### Meeting Name:
+
+### Lead by: ~
+
+- Rami and Beatrice are in person. Group is discussing possible code for Rami since none of the group realized his code idea was scrapped. I suggested coming from the User Testing Suggestions that maybe he could code the feature "auto start" for when the developer forget to start the timer, and "auto stop" if the person forgot to stop or pause the timer and the VS Code has been idle.
+
+Blockers: Still the GUI is a big blocker
