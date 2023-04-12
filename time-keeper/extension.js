@@ -1,7 +1,5 @@
-
 // import {Blob} from 'buffer';
 const fs = require('fs');
-
 
 
 
@@ -15,6 +13,7 @@ const vscode = require("vscode");
 /**
  * @param {vscode.ExtensionContext} context
  */
+
 function activate(context) {
   let seconds = 0;
   let minutes = 0;
@@ -27,15 +26,21 @@ function activate(context) {
   // The command has been defined in the package.json file
   // Now provide the implementation of the command with  registerCommand
   // The commandId parameter must match the command field in package.json
+
   //Function starts the timer function, this is displayed in the bottom left of the page
   let start = vscode.commands.registerCommand("time-keeper.start", function () {
+    
     // comment to show timer has begun
     vscode.window.showInformationMessage("Time started");
+    
     //ensure that the interval is cleared
     clearInterval(Interval);
+    
     // startTimer is defined below - it starts the timer and displays it in the correct format and location
     Interval = setInterval(startTimer, 1000);
+
   });
+
   // Pause
   let stop = vscode.commands.registerCommand("time-keeper.stop", function () {
     // comment to show timer has stopped

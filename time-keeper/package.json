@@ -19,7 +19,7 @@
       },
       {
         "command": "time-keeper.stop",
-        "title": "Stop"
+        "title": "Pause"
       },
       {
         "command": "time-keeper.saveReset",
