@@ -86,3 +86,123 @@ Basic MVP:
 
 
 Link to notes: https://docs.google.com/document/d/1KmgV6N9L9OL377nJbDaXxcZ5JiNEeMuSVApbv_7orRw/edit
+
+
+# March 8, 2023
+
+## Work
+
+#### This week, I:
+
+Researching on: I am researching on how to add webview. I experimented writing a webview.html, webview.css, and separate webview.js and of course it did not work. So this code is not going to push through.
+
+Blockers: I think there's too much GUI assigned on me
+
+## Meetings
+
+### Meeting Name: Assignment
+
+### Lead by: Rami
+
+- We were doing our own code remotely
+
+# March 15, 2023
+
+## Work
+
+#### This week, I:
+
+- was able to code the GUI however it is not the same as we imagined it to be.
+- Researching on: I am researching on how to add webview
+  Link: https://code.visualstudio.com/blogs/2021/10/11/webview-ui-toolkit
+- I also modified the code in Package.json to add the webview for the TimeCheaters.
+
+Blockers: I think there's too much GUI assigned on me. I am stressing out.
+
+## Meetings
+
+### Meeting Name: Assignment
+
+### Lead by: Bassil
+
+- We were doing our own code remotely. I was doing my experimenting.
+- Copy button idea was scrapped
+
+# March 22, 2023
+
+## Work
+
+#### This week, I:
+
+- I personally pushed my code to my own branch and asked feedback for it. The sidebar panel is appearing on the right instead of the left side. I still can't figure out how I can fix that.
+
+## Meetings
+
+### Meeting Name: User Testing
+
+### Lead by: Beatrice
+
+- Beatrice was doing the user-testing to 5 people. Anthony helped Beatrice to user-test, and helped Rami debug his Git connections.
+- Ellis and Rami are doing their code.
+- Bassil not in class. He doesn't have to.
+
+Blockers: I think there's too much GUI assigned on me.
+
+# March 29, 2023
+
+## Work
+
+#### This week, I:
+
+- studied more of TouchGrass extension's code. I wanted to implement the visuals that the developer has made, with the reset button and touch grass button (except for ours it will be the start button). It was written in typescript. It shouldn't be that far from javascript. Still, everything is making me cross eyed.
+
+## Meetings
+
+### Meeting Name: B&B
+
+### Lead by: Bassil
+
+- Bassil and Beatrice were the only ones who showed up in person.
+
+Blockers: The webview is really frustrating me. Nobody wants me to push my code to main since it's not 100% working with the keyboard functionality.
+This workshops is demotivating. I reached out to professors for help. I do not know other professional coders who can do the code.
+
+# April 5, 2023
+
+## Work
+
+#### This week, I:
+
+- considered of coding something else like "did you mean to save this?"
+- I replaced (stop --> pause) to avoid confusion to people using the timer. I pushed it to main.
+
+## Meetings
+
+### Meeting Name:
+
+### Lead by: ~
+
+- Bassil and Beatrice were the only ones who showed up in person.
+- Ellis was able to finalize his CSV Functionality and pushed his code to main.
+
+Blockers: Still the GUI is a big blocker
+
+
+# April 12, 2023
+
+## Work
+
+#### This week, I:
+
+- considered of coding something else like "did you mean to save this?"
+- I replaced (stop --> pause) to avoid confusion to people using the timer. I pushed it to main.
+
+## Meetings
+
+### Meeting Name:
+
+### Lead by: ~
+
+- Rami and Beatrice are in person. Group is discussing possible code for Rami since none of the group realized his code idea was scrapped. I suggested coming from the User Testing Suggestions that maybe he could code the feature "auto start" for when the developer forget to start the timer, and "auto stop" if the person forgot to stop or pause the timer and the VS Code has been idle.
+
+Blockers: Still the GUI is a big blocker
