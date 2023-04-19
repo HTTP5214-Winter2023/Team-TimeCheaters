@@ -206,4 +206,3 @@ Blockers: Still the GUI is a big blocker
 - Rami, Bassil, and Beatrice are in person. Group is discussing possible code for Rami since none of the group realized his code idea was scrapped. I suggested coming from the User Testing Suggestions that maybe he could code the feature "auto start" for when the developer forget to start the timer, and "auto stop" if the person forgot to stop or pause the timer and the VS Code has been idle.
 - Rami will be coding a notification that will update the developer "30 minutes has passed", "1 hour has passed" in the timer.
 
-Blockers: Still the GUI is a big blocker
